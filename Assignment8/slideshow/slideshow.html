@@ -6,36 +6,29 @@
     <link rel="stylesheet" href="slideshow.css">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script>
-            function slideSwitch() {
-                var $active = $("#slideshow IMG.active");
-
-                if ( $active.length == 0 ) $active = $("#slideshow IMG:last");
-
-                var $next =  $active.next().length ? $active.next()
-                : $("#slideshow IMG:first");
-
-                $active.addClass("last-active");
-
-                $next.css({opacity: 0.0})
-                .addClass("active")
-                .animate({opacity: 1.0}, 1000, function() {
-                    $active.removeClass("active last-active");
-                });
-            }
-
-            $(function() {
-                setInterval("slideSwitch()", 2500);
-            });
-
+        
+        $(function() {
+        $("#slideshow > div:gt(0)").hide();
+            
+            setInterval(function() { 
+              $("#slideshow > div:first")
+                .fadeOut(1000)
+                .next()
+                .fadeIn(1000)
+                .end()
+                .appendTo("#slideshow");
+            },  2500);
+        });
     </script>
 </head>
+
 <body>
     <div id="slideshow">
-        <img src="donut1.jpg" alt="">
-        <img src="donut2.jpg" alt="">
-        <img src="donut3.jpg" alt="">
-        <img src="donut4.jpg" alt="">
-        <img src="donut6.png" alt="">
+        <div><img src="cork2.jpg" alt=""></div>
+        <div><img src="croc.jpg" alt=""></div>
+        <div><img src="olympics.jpg" alt=""></div>
+        <div><img src="ice.jpg" alt=""></div>
+        <div><img src="bamboo.jpeg" alt=""></div>
     </div>
 </body>
 </html>
