@@ -1,0 +1,29 @@
+.header {
+    color: #ffffff;
+    width: 600px;
+    background: #30b8ec;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 0;
+}
+
+div {
+    width: 598px;
+}
+
+.headerClicked {
+    background: #ace2f7;
+    color: #0298d2;
+}
+
+.content {
+    display: none;
+    padding: 10px;
+    border-left: solid 1px #30b8ec;
+    border-right: solid 1px #30b8ec;
+    border-bottom: solid 1px #30b8ec;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}

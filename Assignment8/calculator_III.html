@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Lab 2 - Calculator III</title>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script>
+        //1
+        $(function () {
+
+            //2
+            $("input:button")
+            .css("width", "50px")
+            .css("height", "50px")
+            .css("background", "#4aaac8")
+            .css("color", "#ffffff")
+            .css("font-size", "26px")
+            .css("border", "solid 1px #85c6da")
+            .css("borderRadius", "10px")
+            .css("margin-bottom", "5px");
+
+            $("input:text")
+            .css("width", "208px")
+            .css("height", "40px")
+            .css("background", "#ffffff")
+            .css("color", "#4aaac8")
+            .css("border", "solid 1px #85c6da")
+            .css("margin-bottom", "5px")
+            .css("font-size", "32px")
+            .css("text-align", "center");
+
+            $("input#clear")
+            .css("width", "210px");
+
+            //3
+            $("div").on({
+                click: function(event) {
+                    $("#result").val($("#result").val() + event.target.value);
+                }
+            });
+            $("#equal").on({
+                click: function(event) {
+                    $("#result").val(eval($("#result").val()));
+                }
+            });
+            $("#clear").on({
+                click: function(event) {
+                    $("#result").val("");
+                }
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <input type="text" readonly id="result">
+    <br>
+    <div id="container">
+        <input type="button" id="seven" value="7">
+        <input type="button" id="eight" value="8">
+        <input type="button" id="nine" value="9">
+        <input type="button" id="divide" value="/">
+        <br>
+        <input type="button" id="four" value="4">
+        <input type="button" id="five" value="5">
+        <input type="button" id="six" value="6">
+        <input type="button" id="multiply" value="*">
+        <br>
+        <input type="button" id="one" value="1">
+        <input type="button" id="two" value="2">
+        <input type="button" id="three" value="3">
+        <input type="button" id="subtract" value="-">
+        <br>
+        <input type="button" id="zero" value="0">
+        <input type="button" id="period" value=".">
+        <input type="button" id="add" value="+">
+        <input type="button" id="equal" value="=">
+    </div>
+        <br>
+        <input type="button" id="clear" value="Clear">
+
+</body>
+</html>

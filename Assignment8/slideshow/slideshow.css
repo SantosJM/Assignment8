@@ -1,0 +1,22 @@
+#slideshow {
+    position:relative;
+    height:650px;
+}
+
+#slideshow IMG {
+    position:absolute;
+    height: 700px;
+    width: 850px;
+    top:0;
+    left:0;
+    z-index:8;
+}
+#slideshow IMG.active {
+    z-index:10;
+}
+#slideshow IMG.last-active {
+    z-index:9;
+}
+
+
+

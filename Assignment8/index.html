@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Assignment 8: Part 1 - jQuery Events</title>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            $(function() {
+                /* 1
+                $("button").click(function() {
+                    alert("What up, Zak?!");
+                });
+                */
+
+                /* 2
+                $("button").bind("click", function() {
+                    alert("It worked!");
+                });
+                */
+
+                /* 3
+                $("body").on("click", function() {
+                    alert("It worked again!");
+                });
+                */
+
+                /* 4
+                $("body").on("click", "button", function() {
+                    alert("I'm on a roll!");
+                });
+                */
+
+                /* 5
+                $("div").css("width", "400px").css("height", "400px").css("background", "red");
+                $("body").on("click mouseenter mouseleave", "div", function() {
+                    alert("Div was clicked on, mouse entered, or mouse left");
+                });
+                */
+
+                /* 6
+                $("span").css("display", "block").css("width", "400px").css("height", "400px").css("background", "red");
+                $("body").on({
+                    click: function() {
+                        alert("You clicked on the span");
+                    },
+                    mouseenter: function() {
+                        alert("Mouse Entered the span");
+                    },
+                    mouseleave: function() {
+                        alert("Mouse left the span");
+                    }
+                }, "span");
+                */
+
+
+                /* 7
+                $("body").on("click", "a", function(event) {
+                    event.preventDefault();
+                    $("a").css("color", "red");
+                    alert(event.target.nodeName);
+                });
+                */
+
+                /* 8
+                $(window).resize(function() {
+                    $("div").text($(window).width());
+                });
+                */
+
+
+                /* 9
+                $("input").on({
+                    focus: function() {
+                        $(this).css("background", "#d3d3d3");
+                    },
+                    blur: function() {
+                        $(this).css("background", "#ffffff");
+                    }
+                });
+                */
+
+
+                /* 10
+                $("body").on({
+                    submit: function(event) {
+                        event.preventDefault();
+                        if ($("#name").val().length > 0) {
+                            $("#name").css("border", "1px solid green");
+                        } else {
+                            $("#name").css("border", "1px solid red");
+                            alert("Red highlighted fields are required");
+                        }
+                        if ($("#email").val().length > 0) {
+                            $("#email").css("border", "1px solid green");
+                        } else {
+                            $("#email").css("border", "1px solid red");
+                            alert("Red highlighted fields are required");
+                        }
+                    }
+                }, "form");
+                */
+            });
+        </script>
+    </head>
+
+    <body>
+        <h2>Buttons</h2>
+        <button>Button 1</button>
+        <button>Button 2</button>
+
+        <h2>Div</h2>
+        <div></div>
+
+        <h2>Span</h2>
+        <span></span>
+
+        <h2>Link</h2>
+        <a href="http://www.google.com">Google</a>
+
+        <h2>Form</h2>
+        <form action="#">
+            <input id="name" type="text"  name="name"><br>
+            <input id="email" type="text"  name="email"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
